@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p> Add Section </p>
+
+<label>First No :</label><br>
+<input id="num1"  type="number"/><br>
+<label>Second No :</label><br>
+<input id="num2"  type="number"/><br>
+
+<input type="button" name="Add" value="Add" onclick="addTwoNumber()"/>
+    <input type="button" name="sub" value=sub onclick="subTwoNumber()"/>
+
+<p id="demo"></p>
+<script>
+    function subTwoNumber (a,b){
+        var a = document.getElementById("num1").value;
+        var b = document.getElementById("num2").value
+        return a-b;
+    }
+function myFunction() {
+    document.getElementById("demo").innerHTML = Date();
+}
+
+function addTwoNumber(){
+    var a = document.getElementById("num1").value;
+    var b = document.getElementById("num2").value;
+
+    var x = Number(a) + Number(b);
+    document.getElementById("demo").innerHTML = "Add Value: " + x;
+
+}
+</script>
+
+</body>
+</html> 

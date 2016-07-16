@@ -1,0 +1,99 @@
+<html>
+<head>
+	<title>Calculator</title>
+	<style type="text/css">
+		<!--form {width: 150px;border: outset 3px #000000;}
+		input {width: 30px;background-color: #dedede;color: #000000;border: double #0000ff 3px;}
+		input:active {background-color: #ff0000;}
+		input.window {width: 132px;background-color: #ffffff;color: #000000;}
+		input.sum {width: 132px;}-->
+	</style>
+	<script type="text/javascript">function 
+		foc(){zah()document.forms.myForm[0].focus()}function numberletter(){z = "0"while (z == "0"){x = document.forms.myForm[0].valuey = x.lengthif(y == 0){ return}for(i = 0;i<y;i++){ z = "0" for(j=0;j<10;j++) { if(x.substring(i,i+1)==j) { z="1" } } if(z=="0") { if(i==0) { document.forms.myForm[0].value=x.substring(1,y) } else { document.forms.myForm[0].value=x.substring(0,i)+x.substring(i+1,y) } i=99 }}}}function 
+		operator(operator){document.forms.myForm[17].value=operatordocument.forms.myForm[18].value=document.forms.myForm[0].valuedocument.forms.myForm[0].value=""}function 
+		alrt(){alert("BKAH")}function calculate(first,second,operator){if (first.length==0){alert("Please enter 2 numbers and an operator before calculating.");zah()return}if (second.length==0){alert("Please enter 2 numbers and an operator before calculating.");return}if (operator.length==0){alert("Please enter 2 numbers and an operator before calculating.");return}if (operator==&#39;+&#39;){var y=eval(first)+eval(second)document.forms.myForm[0].value=y}if (operator==&#39;-&#39;){var y=eval(first)-eval(second)document.forms.myForm[0].value=y}if (operator==&#39;*&#39;){var y=eval(first)*eval(second)document.forms.myForm[0].value=y}if (operator==&#39;/&#39;){var y=eval(first)/eval(second)document.forms.myForm[0].value=y}}function clrlast(){var v = document.forms.myForm[0].valuevar l = v.lengthif(l > 0){var b = v.substring(0,l-1)document.forms.myForm[0].value=b}}function zah(){document.forms.myForm[0].value=""document.forms.myForm[18].value=""document.forms.myForm[17].value=""}function called(num) //start function that recieves button clicks{var blah=document.forms.myForm[0].valuelength = blah.length //put the length of the text box into "length"if(!(num==&#39;0&#39; && length==0)) //checking if the first digit in the box is not 0{x=document.forms.myForm[0].valuey=x+numdocument.forms.myForm[0].value=y}num="" //undefine variableslength="" //""document.forms.myForm[21].value=blah}</script></head>
+<body onload="foc()">
+	<fieldset>
+		<form name="myForm">
+			<center>
+				<table>
+					<tr>
+						<td colspan="4">
+							<input class="window" type="text" dir="rtl" value="1" onchange="numberletter()">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" value="7" onclick="called(&#39;7&#39;)">
+						</td>
+						<td>
+							<input type="button" value="8" onclick="called(&#39;8&#39;)">
+						</td>
+						<td>
+							<input type="button" value="9" onclick="called(&#39;9&#39;)">
+						</td>
+						<td>
+							<input type="button" value="+" onclick="operator(&#39;+&#39;)">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" value="4" onclick="called(&#39;4&#39;)">
+						</td>
+						<td>
+							<input type="button" value="5" onclick="called(&#39;5&#39;)">
+						</td>
+						<td>
+							<input type="button" value="6" onclick="called(&#39;6&#39;)">
+						</td>
+						<td>
+							<input type="button" value="-" onclick="operator(&#39;-&#39;)">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" value="1" onclick="called(&#39;1&#39;)">
+						</td>
+						<td>
+							<input type="button" value="2" onclick="called(&#39;2&#39;)">
+						</td>
+						<td>
+							<input type="button" value="3" onclick="called(&#39;3&#39;)">
+						</td>
+						<td>
+							<input type="button" value="*" onclick="operator(&#39;*&#39;)">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" value="0" onclick="called(&#39;0&#39;)">
+						</td>
+						<td>
+							<input type="button" value="C" onclick="clrlast()">
+						</td>
+						<td>
+							<input type="button" value="CA" onclick="zah()">
+						</td>
+						<td>
+							<input type="button" value="/" onclick="operator(&#39;/&#39;)">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="hidden" value="">
+						</td>
+						<td colspan="2">
+							<input type="hidden" value="">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<input class="sum" type="button" value=" = " onclick="calculate(document.forms.myForm[18].value,document.forms.myForm[0].value,document.forms.myForm[17].value)">
+						</td>
+					</tr>
+				</table>
+			</center>
+		</form>
+	</fieldset>
+</body>
+</html>
